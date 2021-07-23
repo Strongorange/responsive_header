@@ -1,0 +1,23 @@
+// Break Point
+$phone: 900px;
+$laptop: 900px;
+$desktop: 1400px;
+
+// Mixins
+@mixin phone {
+  @media (max-width: #{$phone}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}

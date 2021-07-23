@@ -1,0 +1,88 @@
+@import "./mixins.scss";
+@import "./reset.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px;
+  background-color: wheat;
+  .header__logo {
+    span {
+      font-size: 1.5em;
+      margin-left: 0.5em;
+    }
+  }
+  .header__menus {
+    ul {
+      display: flex;
+      li {
+        margin: 0px 1em;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .header__links {
+    ul {
+      display: flex;
+    }
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  @include phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: wheat;
+    .header__logo {
+      span {
+        font-size: 1.5em;
+        margin-left: 0.5em;
+      }
+    }
+    .header__menus {
+      display: none;
+      align-items: center;
+      width: 100%;
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        li {
+          margin: 0.3em 0;
+          font-size: 1.2em;
+        }
+      }
+    }
+    .header__links {
+      display: none;
+      align-items: center;
+      width: 100%;
+      ul {
+        display: flex;
+        justify-content: center;
+      }
+      margin-top: 0.9em;
+    }
+
+    .header__toggle {
+      display: block;
+      position: absolute;
+      right: 32px;
+      font-size: 11px;
+      color: black;
+    }
+
+    .header__menus.active,
+    .header__links.active {
+      display: block;
+    }
+  }
+}
